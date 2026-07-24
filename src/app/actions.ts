@@ -18,8 +18,15 @@ export async function createLead(_: FormState, formData: FormData): Promise<Form
 
   if (!parsed.success) return { message: "Please check the highlighted fields.", errors: parsed.error.flatten().fieldErrors };
 
-  await prisma.lead.create({ data: parsed.data });
-  return { success: true, message: "Thanks — your enquiry is with our team." };
+  try {
+    await prisma.lead.create({ data: parsed.data });
+    return { success: true, message: "Thanks — your enquiry is with our team." };
+  } catch (error) {
+    console.error("Lead submission failed", error);
+    return {
+      message: "We couldn’t send your enquiry just now. Please try again in a moment.",
+    };
+  }
 }
 
 export async function updateLeadStatus(id: string, status: LeadStatus) {
