@@ -3,7 +3,9 @@
 A small lead-capture product with a public enquiry form and a secure admin workspace for reviewing, searching, and progressing incoming leads.
 
 Live website: https://leaddesk-mini-eta.vercel.app/
+
 Admin login: https://leaddesk-mini-eta.vercel.app/login
+
 Admin dashboard: https://leaddesk-mini-eta.vercel.app/admin
 
 ## Stack
