@@ -83,23 +83,39 @@ export function LoginForm() {
       {error && <p className="form-error">{error}</p>}
 
       <button className="primary-button" disabled={pending}>
-        {pending ? "Signing in..." : "Sign in"}
+        {pending ? "Signing in..." : "Sign In"}
       </button>
 
-      <hr style={{ margin: "24px 0", opacity: 0.2 }} />
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          margin: "20px 0",
+          color: "#888",
+        }}
+      >
+        <div style={{ flex: 1, height: "1px", background: "#ddd" }} />
+        <span style={{ padding: "0 12px" }}>or</span>
+        <div style={{ flex: 1, height: "1px", background: "#ddd" }} />
+      </div>
 
       <button
         type="button"
         onClick={demoLogin}
         disabled={pending}
-        className="primary-button"
         style={{
-          background: "#f5f5f5",
-          color: "#111",
-          border: "1px solid #ddd",
+          width: "100%",
+          padding: "14px",
+          borderRadius: "10px",
+          border: "1px solid #dcdcdc",
+          background: "white",
+          color: "#222",
+          fontWeight: 600,
+          fontSize: "15px",
+          cursor: "pointer",
         }}
       >
-        🚀 Continue as Demo
+        🚀 Demo Login
       </button>
     </form>
   );
